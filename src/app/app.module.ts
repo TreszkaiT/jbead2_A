@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { environment } from './environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ConfigModule } from './module/config/config.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     ),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    ConfigModule
   ],
   providers: [],
   bootstrap: [AppComponent]
