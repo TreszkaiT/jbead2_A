@@ -12,7 +12,7 @@ import { ConfigStoreServiceImpl } from './service';
   declarations: [],
   imports: [
     CommonModule,
-    StoreModule.forFeature(CONFIG_FEATURE_KEY, configReducer),
+    StoreModule.forFeature(CONFIG_FEATURE_KEY, configReducer),                  // NgRx: 3. State(polc)+Reducer és Effect elkészítése  és Config Implementáció betöltése DI-al
     EffectsModule.forFeature([ConfigEffects]),
   ],
   providers: [

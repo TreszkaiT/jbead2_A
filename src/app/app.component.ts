@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     this.primengConfig.ripple = true;
-    this.configChange$ = this.configStoreService.selectEntity$();
+    this.configChange$ = this.configStoreService.selectEntity$();                                               // Entity kiszedése
 
     this.items = [
       {
@@ -169,13 +169,13 @@ export class AppComponent implements OnInit {
       }
     ];
 
-    this.configStoreService.selectEntity$().pipe(tap(config => {
+    this.configStoreService.selectEntity$().pipe(tap(config => {                                    // ha jön téma -> váltás
       this.switchTheme(config.theme);
     })).subscribe();
   }
 
   private switchTheme(theme: string) {
-    let themeLink = this.document.getElementById(
+    let themeLink = this.document.getElementById(                                               // az index.html HEAD-ban az id megváltoztatása: id="app-theme"
         'app-theme'
     ) as HTMLLinkElement;
 

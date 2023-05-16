@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   exports: [
     CommonModule,
@@ -23,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     TableModule,
     TabViewModule,
     ToolbarModule,
+    HttpClientModule,
   ],
   imports: [
     CommonModule,
@@ -35,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     TableModule,
     TabViewModule,
     ToolbarModule,
+    HttpClientModule,
   ]
 })
 export class SharedModule { }

@@ -15,7 +15,7 @@ export class ConfigStoreServiceImpl extends ConfigStoreService{
     super();
   }
 
-  public override dispatchGetEntityAction(userId: string): void {
+  public override dispatchGetEntityAction(userId: number): void {
     this.store.dispatch(configActions.getEntity({ userId }));                   // dispatch-elünk egy getEntity Action-t
   }
 
@@ -24,7 +24,7 @@ export class ConfigStoreServiceImpl extends ConfigStoreService{
   }
 
   public override selectEntity$(): Observable<ConfigEntity> {     
-      return this.store.pipe(select(configSelectors.selectConfig));               // és Select-álunk egy Entity-t
+      return this.store.pipe(select(configSelectors.selectConfig));               // és Select-álunk egy Entity-t: app.component.ts használja, hogy Selctorral figyelje változik-e a Store Stateje
   }
 
 }

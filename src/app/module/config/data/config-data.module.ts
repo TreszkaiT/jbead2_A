@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfigDataService } from 'src/app/api/config';
 import { ConfigDataServiceMock } from './service';
+import { ConfigDataServiceImpl } from './service/config-data.service.impl';
 
 @NgModule({
   declarations: [],
@@ -11,7 +12,8 @@ import { ConfigDataServiceMock } from './service';
   providers: [
     {
       provide: ConfigDataService,
-      useClass: ConfigDataServiceMock,
+      useClass: ConfigDataServiceImpl, 
+      //useClass: ConfigDataServiceMock,
     }
   ]
 })

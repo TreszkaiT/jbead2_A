@@ -18,7 +18,7 @@ import { ConfigModule } from './module/config/config.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    StoreModule.forRoot(
+    StoreModule.forRoot(                                                        // NgRx: 1. Store és Effect elkészítése  és Config betöltése
       {},
       {
         runtimeChecks: {

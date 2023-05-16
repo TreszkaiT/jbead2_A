@@ -4,7 +4,7 @@ import { ConfigEntity } from 'src/app/api/config';
 
 export const getEntity = createAction(
     '[Config Component] Get Entity',
-    props<{ userId: string}>()
+    props<{ userId: number}>()
 );
 export const getEntitySuccess = createAction(
     '[Config Component] Get Entity Success',

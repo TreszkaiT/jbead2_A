@@ -9,8 +9,8 @@ import { ConfigStoreModule } from './store/config-store.module';
   declarations: [],
   imports: [
     CommonModule,
-    ConfigDataModule,
-    ConfigStoreModule
+    ConfigDataModule,                                 //          Data műveletek behúzása
+    ConfigStoreModule                                 // NgRx 2.: Store műveletek és  Store-ban lévő State elkészítése, és az Effectek deklarálása
   ]
 })
 export class ConfigModule { }
