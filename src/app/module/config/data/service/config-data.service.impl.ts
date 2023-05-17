@@ -9,10 +9,10 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ConfigDataServiceImpl extends ConfigDataService {
 
-  private config: ConfigEntity = {
-    id: 1,
-    theme: 'kb-dark-theme',
-  }
+  // private config: ConfigEntity = {
+  //   id: 1,
+  //   theme: 'kb-dark-theme',
+  // }
 
   public uri = environment.uri;
 
