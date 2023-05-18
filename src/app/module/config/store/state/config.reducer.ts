@@ -12,7 +12,7 @@ export interface ConfigState {
 
 export const initialState: ConfigState = {
   config: {
-    id: 1,
+    id: '1',
     theme: 'kb-light-theme',
   },
   error: null,

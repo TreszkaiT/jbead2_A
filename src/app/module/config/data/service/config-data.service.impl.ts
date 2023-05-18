@@ -20,7 +20,7 @@ export class ConfigDataServiceImpl extends ConfigDataService {
     super();
   }
 
-  public override get$(userId: number): Observable<ConfigEntity | null> {
+  public override get$(userId: string): Observable<ConfigEntity | null> {
     //return of(this.config);
     //console.log(this.httpClient.get<ConfigEntity>(`${this.uri}/config/${userId}`));//.pipe(map( () => console.log(this.config))));
     return this.httpClient.get<ConfigEntity>(`${this.uri}/config/${userId}`);
