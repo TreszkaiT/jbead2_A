@@ -4,6 +4,7 @@ import { FormGroup } from '@angular/forms';
 import { CityEntity } from '../city';
 import { Identifiable } from '../identify';
 
+export const USER_FEATURE_KEY = 'user';
 
 export interface UserModel {
   city?: CityEntity;

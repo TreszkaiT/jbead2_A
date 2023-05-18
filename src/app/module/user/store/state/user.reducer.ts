@@ -1,11 +1,11 @@
-import { UserEntity } from 'src/app/api/user';
+import { USER_FEATURE_KEY, UserEntity } from 'src/app/api/user';
 
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Action, createReducer, on } from '@ngrx/store';
 
 import * as userActions from './user.actions';
 
-export const USER_FEATURE_KEY = 'user';
+
 
 export interface State extends EntityState<UserEntity> {            // State elkészül itt: ids: és entities: property-k azok eleve elkszünek az EntityState-ben. Itt benne, ezekkel nekem már nem kell foglalkozni!!!
     isNewEntityButtonEnabled: boolean;

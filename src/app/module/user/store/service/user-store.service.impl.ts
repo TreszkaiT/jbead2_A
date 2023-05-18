@@ -9,9 +9,9 @@ import {
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
-import * as userActions from './user.actions';
-import * as fromUser from './user.reducer';
-import * as UserSelectors from './user.selectors';
+import * as userActions from '../state/user.actions';
+import * as fromUser from '../state/user.reducer';
+import * as UserSelectors from '../state/user.selectors';
 
 @Injectable()
 export class UserStoreServiceImpl extends UserStoreService {
