@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { CityEntity, CityEntityAdd, CityEntityUpdate, CityModel, CityStoreService } from 'src/app/api/city';
+import { CityEntity, CityEntityAdd, CityEntityUpdate, CityStoreService } from 'src/app/api/city';
 
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
