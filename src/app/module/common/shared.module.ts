@@ -9,7 +9,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     ButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     ImageModule,
     InputTextareaModule,
     InputTextModule,
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     ButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     ImageModule,
     InputTextareaModule,
     InputTextModule,

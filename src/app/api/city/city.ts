@@ -7,9 +7,12 @@ export const CITY_FEATURE_KEY = 'city';
 export interface CityModel {
   // #region Properties (3)
 
-  id: 1;
-  name: 'Nyíregyháza';
-  zip: 4400;
+  name: string;
+  zip: string;
+  
+//   id: 1;
+//   name: 'Nyíregyháza';
+//   zip: 4400;
 
   // #endregion Properties (3)
 }
@@ -25,6 +28,6 @@ export type CityFormParams = {
 };
 
 export type CityTableParams = {
-    selectedEntity: CityEntity | null;
+    selectedEntity: CityEntity | null;              // p-multiSelect component miatt
     entities: CityEntity[];
 }

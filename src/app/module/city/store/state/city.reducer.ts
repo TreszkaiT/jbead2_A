@@ -1,53 +1,77 @@
 
 import { CITY_FEATURE_KEY, CityEntity } from 'src/app/api/city';
 
-import { createReducer, on } from '@ngrx/store';
+import { Action, createReducer, on } from '@ngrx/store';
 
-import * as actions from './city.action';
+import * as cityActions from './city.actions';
+import { EntityAdapter, EntityState, createEntityAdapter } from '@ngrx/entity';
 
-export interface CityState {
-    city: CityEntity;
-    error: string | null;
+export interface CityState extends EntityState<CityEntity> {
+    isNewEntityButtonEnabled: boolean;
+    selectedId?: string;
+    loading: boolean;
+    error?: string | null;
 }
-
-export const initialState: CityState = {
-    city: {
-        id: 1,
-        name: 'Nyíregyháza',
-        zip: 4400,
-    },
-    error: null,
-};
 
 export interface CityPartialState {
     readonly [CITY_FEATURE_KEY]: CityState;
 }
 
+export const cityAdapter: EntityAdapter<CityEntity> =
+    createEntityAdapter<CityEntity>({
+        selectId: (model: CityEntity) => model.id,
+});
+
+export const initialState: CityState = cityAdapter.getInitialState({
+    isNewEntityButtonEnabled: true,
+    loading: false,
+});
+
+
+
 export const cityReducer = createReducer(
     initialState,
-    on(actions.getEntitySuccess, (state, { city }) => {
-        return {
-            ...state,
-            city,
-        };
+    on(cityActions.addCity, (state) => ({
+        ...state,
+        loading: false,
+        error: null,
+    })),
+    on(cityActions.addCitySuccess, (state, { city }) =>
+        cityAdapter.addOne(city, { ...state, loading: true })
+    ),
+    on(cityActions.addCityFail, (state, { error }) => ({ ...state, error })),
+    on(cityActions.changeNewEntityButtonEnabled, (state, { enabled }) => ({
+        ...state,
+        isNewEntityButtonEnabled: enabled,
+    })),
+    on(cityActions.getCity, (state) => ({
+        ...state,
+        loading: false,
+        error: null,
+    })),
+    on(cityActions.getCitySuccess, (state, { city }) => {
+        if (city) {
+            return cityAdapter.upsertOne(city, { ...state, loading: false });
+        } else {
+            return state;
+        }
     }),
-    on(actions.getEntityFail, (state, { error }) => {
-        return {
-            ...state,
-            error,
-        };
-    }),
-    on(actions.updateEntitySuccess, (state, { city }) => {
-        return {
-            ...state,
-            city,
-            error: null,
-        };
-    }),
-    on(actions.updateEntityFail, (state, { error }) => {
-        return {
-            ...state,
-            error,
-        };
-    })
+    on(cityActions.getCityFail, (state, { error }) => ({ ...state, error })),
+    on(cityActions.listCitys, (state) => ({
+        ...state,
+        loading: false,
+        error: null,
+    })),
+    on(cityActions.listCitysSuccess, (state, { citys }) =>
+        cityAdapter.upsertMany(citys, { ...state, loading: true })
+    ),
+    on(cityActions.listCitysFail, (state, { error }) => ({ ...state, error })),
+    on(cityActions.updateCitySuccess, (state, { city }) =>
+        cityAdapter.updateOne(city, state)
+    ),
+    on(cityActions.updateCityFail, (state, { error }) => ({ ...state, error }))
 );
+
+export function reducer(state: CityState | undefined, action: Action) {
+    return cityReducer(state, action);
+}
