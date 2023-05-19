@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Közösségi alkalmazások és szerkesztése</h2>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Buttons</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let socialMedia of currencies">
+                            <td> {{ socialMedia.id }}</td>
+                            <td> {{ socialMedia.name }}</td>
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <button (click)="onEditSocialMedia(socialMedia)" type="button" class="btn btn-primary">
+                                        <fa-icon [icon]="faEdit"></fa-icon>
+                                    </button>
+                                    <button (click)="onDeleteSocialMedia(socialMedia)" type="button" class="btn btn-danger">
+                                        <fa-icon [icon]="faTimes"></fa-icon>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

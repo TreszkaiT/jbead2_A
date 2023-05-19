@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Egyéb készségek felvétele</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <form #form="ngForm" (submit)="onClickSubmit(form)" novalidate>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" required ngModel>
+                </div>
+                <div class="form-group">
+                    <label>Level</label>
+                    <input type="text" name="level" class="form-control" required ngModel>
+                </div>
+                    <input type="hidden" name="id" placeholder="1" value="1" ngModel>
+
+                <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
