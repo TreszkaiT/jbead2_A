@@ -1,7 +1,5 @@
 import { AuthenticationStoreService } from 'src/app/api/authentication';
-import {
-    AuthenticationStoreServiceImpl
-} from 'src/app/core/authentication/store/service/authentication-store.service.impl';
+import { AuthenticationStoreServiceImpl } from 'src/app/core/authentication/store/service';
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
