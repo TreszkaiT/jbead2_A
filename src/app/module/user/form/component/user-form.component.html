@@ -1,0 +1,54 @@
+<section class="artist-form" *ngIf="params$ | async as params">
+	<form [formGroup]="params.formGroup">
+		<input name="id" formControlName="id" hidden />
+
+		<div class="field">
+			<span class="p-float-label">
+				<input id="email" type="text" pInputText formControlName="email" />
+
+				<label for="email">Email</label>
+			</span>
+		</div>
+
+		<div class="field">
+			<span class="p-float-label">
+				<input id="firstName" type="text" pInputText formControlName="firstName" />
+
+				<label for="firstName">First name</label>
+			</span>
+		</div>
+
+		<div class="field">
+			<span class="p-float-label">
+				<input id="lastName" type="text" pInputText formControlName="lastName" />
+
+				<label for="lastName">Last name</label>
+			</span>
+		</div>
+<!-- 
+	optionLabel="name"			-- ez mondja meg, hogy a City Obj-ból melyik propery alapján írassuk ki a felsorolást a dropdown-ba
+	[options]="params.cities"   -- itt keresi meg a params-ból a cities-eket, amiket neki a felületen meg kell jelenítenie
+	formControlName="city"		-- ez a direktíva mondja meg a dropdown-nak, hogy össze kell őt házasítani a FormGroup-ban lévő city property-vel
+-->
+		<div class="field">
+			<span class="p-float-label">
+				<p-dropdown
+					id="city"
+					optionLabel="name"				
+					[options]="params.cities"
+					placeholder="Select a city"
+					formControlName="city"
+				></p-dropdown>
+
+				<label for="city">City</label>
+			</span>
+		</div>
+
+		<div style="margin-top: 10px" fxLayout="row" fxLayoutAlign="space-around">
+			<button pButton type="button" label="Submit" (click)="submit()"
+				[disabled]="!params.formGroup.valid"></button>
+
+			<button pButton type="button" label="Cancel" (click)="cancel()"></button>
+		</div>
+	</form>
+</section>

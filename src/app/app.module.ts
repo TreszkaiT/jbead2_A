@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './module/common';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { environment } from './environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ConfigModule } from './module/config/config.module';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [

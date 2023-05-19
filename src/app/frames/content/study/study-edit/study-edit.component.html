@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Tanulmány szerkesztése</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <form #form="ngForm" (submit)="onClickSubmit(form)" novalidate>
+                <div class="form-group">
+                    <label>Work School</label>
+                    <input type="text" name="nameSchool" class="form-control" required [(ngModel)]="editedStudy.nameSchool">
+                </div>
+                <div class="form-group">
+                    <label>From</label>
+                    <input type="text" name="from" class="form-control" required [(ngModel)]="editedStudy.from">
+                </div>
+                <div class="form-group">
+                    <label>To</label>
+                    <input type="text" name="to" class="form-control" required [(ngModel)]="editedStudy.to">
+                </div>
+                <div class="form-group">
+                    <label>Comment</label>
+                    <input type="text" name="comment" class="form-control" required [(ngModel)]="editedStudy.comment">
+                </div> 
+                <div class="form-group">
+                    <label>Level</label>
+                    <input type="text" name="level" class="form-control" required [(ngModel)]="editedStudy.level">
+                </div>                                                
+                    <input type="hidden" name="id" placeholder="1" [(ngModel)]="editedStudy.id">
+
+                <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Szerkesztés</button>
+            </form>
+        </div>
+    </div>
+</div>

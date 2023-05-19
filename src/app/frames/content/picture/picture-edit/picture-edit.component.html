@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Kép szerkesztése</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <form #form="ngForm" (submit)="onClickSubmit(form)" novalidate>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" required [(ngModel)]="editedPicture.name">
+                </div>
+                <div class="form-group">
+                    <label>Type</label>
+                    <input type="text" name="type" class="form-control" required [(ngModel)]="editedPicture.type">
+                </div>
+                    <input type="hidden" name="id" placeholder="1" [(ngModel)]="editedPicture.id">
+
+                <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Szerkesztés</button>
+            </form>
+        </div>
+    </div>
+</div>

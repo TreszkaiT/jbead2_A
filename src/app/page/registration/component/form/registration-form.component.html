@@ -1,0 +1,23 @@
+<section class="album-form" *ngIf="params$ | async as params">
+	<form [formGroup]="params.formGroup">
+		<h4>Registration</h4>
+
+		<div class="mb-3">
+			<label class="form-label">Email</label>
+
+			<input type="text" formControlName="email" class="form-control" />
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Password</label>
+
+			<input type="password" formControlName="password" class="form-control" />
+		</div>
+
+		<div style="margin-top: 10px">
+			<button type="button" class="btn btn-primary" (click)="submit()"
+				[disabled]="!params.formGroup.valid">
+				Submit</button>
+		</div>
+	</form>
+</section>

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Üzenetküldő alkalmazások szerkesztése</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <form #form="ngForm" (submit)="onClickSubmit(form)" novalidate>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" required [(ngModel)]="editedMessageApp.name">
+                </div>
+                    <input type="hidden" name="id" placeholder="1" [(ngModel)]="editedMessageApp.id">
+
+                <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Szerkesztés</button>
+            </form>
+        </div>
+    </div>
+</div>

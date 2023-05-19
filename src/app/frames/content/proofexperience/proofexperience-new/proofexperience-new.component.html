@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Tapasztalat felvétele</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <form #form="ngForm" (submit)="onClickSubmit(form)" novalidate>
+                <div class="form-group">
+                    <label>Name Work</label>
+                    <input type="text" name="nameWork" class="form-control" required ngModel>
+                </div>
+                <div class="form-group">
+                    <label>From</label>
+                    <input type="text" name="from" class="form-control" required ngModel>
+                </div>
+                <div class="form-group">
+                    <label>To</label>
+                    <input type="text" name="to" class="form-control" required ngModel>
+                </div>
+                <div class="form-group">
+                    <label>Comment</label>
+                    <input type="text" name="comment" class="form-control" required ngModel>
+                </div>                                
+                    <input type="hidden" name="id" placeholder="1" value="1" ngModel>
+
+                <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+</div>

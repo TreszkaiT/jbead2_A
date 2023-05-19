@@ -9,24 +9,24 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ConfigDataServiceImpl extends ConfigDataService {
 
-  private config: ConfigEntity = {
-    id: 1,
-    theme: 'kb-dark-theme',
-  }
+  // private config: ConfigEntity = {
+  //   id: 1,
+  //   theme: 'kb-dark-theme',
+  // }
 
-  public uri = environment.uri;
+  public apiUrl = environment.apiUrl;
 
   public constructor(private httpClient: HttpClient){
     super();
   }
 
-  public override get$(userId: number): Observable<ConfigEntity | null> {
+  public override get$(userId: string): Observable<ConfigEntity | null> {
     //return of(this.config);
-    //console.log(this.httpClient.get<ConfigEntity>(`${this.uri}/config/${userId}`));//.pipe(map( () => console.log(this.config))));
-    return this.httpClient.get<ConfigEntity>(`${this.uri}/config/${userId}`);
+    //console.log(this.httpClient.get<ConfigEntity>(`${this.apiUrl}/config/${userId}`));//.pipe(map( () => console.log(this.config))));
+    return this.httpClient.get<ConfigEntity>(`${this.apiUrl}/config/${userId}`);
   }
   public override update$(config: ConfigEntity): Observable<ConfigEntity> {
     //return of(config);
-    return this.httpClient.patch<ConfigEntity>(`${this.uri}/config`, config);
+    return this.httpClient.patch<ConfigEntity>(`${this.apiUrl}/config`, config);
   }
 }

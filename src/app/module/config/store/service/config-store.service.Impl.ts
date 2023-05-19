@@ -15,7 +15,7 @@ export class ConfigStoreServiceImpl extends ConfigStoreService{
     super();
   }
 
-  public override dispatchGetEntityAction(userId: number): void {
+  public override dispatchGetEntityAction(userId: string): void {
     this.store.dispatch(configActions.getEntity({ userId }));                   // dispatch-elünk egy getEntity Action-t
   }
 
