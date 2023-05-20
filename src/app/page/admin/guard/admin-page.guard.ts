@@ -20,6 +20,7 @@ export class AdminPageGuard implements CanActivate {
     return this.authenticationStoreService.isLoggedIn$().pipe(    // a canActivate fgv. az authenticationStoreService-től lekéri hogy isLoggedIn-e, ami egy Observable logikai érték, be vagy-e loginolva
       map((e) => {
         if (e) {                                                // itt kiértékelődik ez az érték
+          // this.router.navigateByUrl('/admin');
           return true;                                          // ha igen, akkor true-val tér vissza
         } else {
             this.router.navigateByUrl('/login');                // ha nem, redirect-áljuk az alkalmazást, azaz átnavigál a login Page-ra

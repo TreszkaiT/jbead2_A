@@ -16,11 +16,11 @@ import { RegistrationPageRoutingModule } from './registration-page-routing.modul
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [
-    {
-      provide: AuthenticationStoreService,
-      useClass: AuthenticationStoreServiceImpl,
-    }
-  ]
+  // providers: [
+  //   {
+  //     provide: AuthenticationStoreService,
+  //     useClass: AuthenticationStoreServiceImpl,
+  //   }
+  // ]
 })
 export class RegistrationPageModule {}

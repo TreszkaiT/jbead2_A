@@ -15,11 +15,11 @@ import { AdminPageComponent } from './component/page/admin-page.component';
     CommonModule,
     AdminPageRoutingModule,
   ],
-  providers: [
-    {
-      provide: AuthenticationStoreService,
-      useClass: AuthenticationStoreServiceImpl,
-    }
-  ]
+  // providers: [
+  //   {
+  //     provide: AuthenticationStoreService,
+  //     useClass: AuthenticationStoreServiceImpl,
+  //   }
+  // ]
 })
 export class AdminPageModule {}

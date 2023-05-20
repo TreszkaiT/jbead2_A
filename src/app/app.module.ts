@@ -1,5 +1,3 @@
-import { AuthenticationStoreService } from 'src/app/api/authentication';
-import { AuthenticationStoreServiceImpl } from 'src/app/core/authentication/store/service';
 import { environment } from 'src/environments/environment';
 
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -19,6 +17,7 @@ import { AuthenticationStoreModule } from './core/authentication/store/authentic
 import { SharedModule } from './module/common';
 import { ConfigModule } from './module/config/config.module';
 import { AdminPageGuard } from './page/admin/guard';
+import { ConfigService } from './api/services/config.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,7 @@ import { AdminPageGuard } from './page/admin/guard';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,                                                  // a html animációk működjenek a primeng component-eken
     // FontAwesomeModule,
     HttpClientModule,
     FormsModule,
@@ -47,7 +46,10 @@ import { AdminPageGuard } from './page/admin/guard';
     AuthenticationStoreModule,                                              // e nélkül nem megy a login és registration html oldala
     AuthenticationDataModule                                                // u.a.
   ],
-  providers: [ AdminPageGuard,],                                            // e nélkül nem megy az admin html oldala
+  providers: [ 
+    AdminPageGuard,
+    ConfigService,                                                          // az app konfigját tartalmazza: apiUrl, title, stb...
+  ],                                            // e nélkül nem megy az admin html oldala
   bootstrap: [AppComponent]
 })
 export class AppModule { }

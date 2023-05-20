@@ -16,11 +16,11 @@ import { LoginPageRoutingModule } from './login-page-routing.module';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [
-    {
-      provide: AuthenticationStoreService,
-      useClass: AuthenticationStoreServiceImpl,
-    }
-  ]
+  // providers: [
+  //   {
+  //     provide: AuthenticationStoreService,
+  //     useClass: AuthenticationStoreServiceImpl,
+  //   }
+  // ]
 })
 export class LoginPageModule {}

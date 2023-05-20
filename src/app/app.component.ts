@@ -7,6 +7,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { ConfigEntity, ConfigStoreService } from './api/config';
 
 import { MenuItem, PrimeNGConfig } from 'primeng/api';
+import { Title } from '@angular/platform-browser';
+import { ConfigService } from './api/services';
 
 @Component({
   selector: 'app-root',
@@ -15,19 +17,23 @@ import { MenuItem, PrimeNGConfig } from 'primeng/api';
 })
 export class AppComponent implements OnInit {
 
-    title = 'jbead2';
+//   title = 'jbead2';
 
   public items!: MenuItem[];
 
   public configChange$!: Observable<ConfigEntity>;
 
-  constructor(
+  constructor(    
+    private _title: Title,
+    private config: ConfigService,
     private primengConfig: PrimeNGConfig,
     private configStoreService: ConfigStoreService,
     @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit(): void {
+
+    this._title.setTitle(this.config.get('appTitle') as string);
 
     this.primengConfig.ripple = true;
     this.configChange$ = this.configStoreService.selectEntity$();                                               // Entity kiszedése
@@ -162,6 +168,10 @@ export class AppComponent implements OnInit {
       {
           label:'Quit',
           icon:'pi pi-fw pi-power-off'
+      },
+      {
+        label: 'Login',
+        routerLink: 'login',
       },
       {
         icon: 'pi pi-fw pi-cog',
