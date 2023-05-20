@@ -12,13 +12,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   exports: [
+    HttpClientModule,
     CommonModule,
     ButtonModule,
     FormsModule,
     ReactiveFormsModule,
+    DropdownModule,
     ImageModule,
     InputTextareaModule,
     InputTextModule,
@@ -26,13 +29,14 @@ import { HttpClientModule } from '@angular/common/http';
     TableModule,
     TabViewModule,
     ToolbarModule,
-    HttpClientModule,
   ],
   imports: [
+    HttpClientModule,
     CommonModule,
     ButtonModule,
     FormsModule,
     ReactiveFormsModule,
+    DropdownModule,
     ImageModule,
     InputTextareaModule,
     InputTextModule,
@@ -40,7 +44,6 @@ import { HttpClientModule } from '@angular/common/http';
     TableModule,
     TabViewModule,
     ToolbarModule,
-    HttpClientModule,
   ]
 })
 export class SharedModule { }

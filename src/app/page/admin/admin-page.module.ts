@@ -1,6 +1,7 @@
 
-import { AuthenticationStoreService } from 'src/app/api/authentication';
-import { AuthenticationStoreServiceImpl } from 'src/app/core/authentication/store/service';
+// import { AuthenticationStoreService } from 'src/app/api/authentication';
+// import { AuthenticationStoreServiceImpl } from 'src/app/core/authentication/store/service';
+import { CityModule } from 'src/app/module/city/city.module';
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ import { AdminPageComponent } from './component/page/admin-page.component';
   imports: [
     CommonModule,
     AdminPageRoutingModule,
+    CityModule                                                    // e nélkül City module nem jelenik meg az admin menü city bal menüpont (entitás) - ra kattintva
   ],
   // providers: [
   //   {

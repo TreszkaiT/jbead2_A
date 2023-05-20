@@ -1,9 +1,7 @@
-8;
-
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { SharedModule } from '../../../common';
+import { SharedModule } from '../../common';
 import { CityTableComponent } from './component';
 
 @NgModule({

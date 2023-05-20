@@ -5,26 +5,26 @@ import { AdminPageComponent } from './component/page/admin-page.component';
 
 const routes: Routes = [
   {
-    path: '', 
-    component: AdminPageComponent,
-    pathMatch: 'full',
-    // path: '',                                                             // ha az admin URL meg van hívva
+    // path: '', 
     // component: AdminPageComponent,
-    // children: [
-      // {
-      //   path: 'user',                                                   // Lazy modon meg a city-t, ha szükség lezs rá
-      //   loadChildren: () =>
-      //     import('../../module/domain/user/admin/user-admin-page.module').then(
-      //       (module) => module.UserAdminPageModule
-      //     ),
-      // },
-      // {
-      //   path: 'city',                                                   // Lazy modon meg a city-t, ha szükség lezs rá
-      //   loadChildren: () =>
-      //     import('../../module/domain/city/admin/city-admin-page.module').then(
-      //       (module) => module.CityAdminPageModule
-      //     ),
-      // },
+    // pathMatch: 'full',
+    path: '',                                                             // ha az admin URL meg van hívva
+    component: AdminPageComponent,
+    children: [
+      {
+        path: 'user',                                                   // Lazy modon meg a city-t, ha szükség lezs rá
+        loadChildren: () =>
+          import('../../module/user/admin/user-admin-page.module').then(
+            (module) => module.UserAdminPageModule
+          ),
+      },
+      {
+        path: 'city',                                                   // Lazy modon meg a city-t, ha szükség lezs rá
+        loadChildren: () =>
+          import('../../module/city/admin/city-admin-page.module').then(
+            (module) => module.CityAdminPageModule
+          ),
+      },
       // {
       //   path: 'language',                                                   // Lazy modon meg a city-t, ha szükség lezs rá
       //   loadChildren: () =>
@@ -81,7 +81,7 @@ const routes: Routes = [
       //       (module) => module.MessageappAdminPageModule
       //     ),
       // },                                      
-    // ],
+    ],
   },
 ];
 

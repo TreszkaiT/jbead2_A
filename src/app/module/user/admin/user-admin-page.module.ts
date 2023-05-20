@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { SharedModule } from '../../../common';
+import { SharedModule } from '../../common';
 import { UserCollectionModule } from '../collection/user-collection.module';
 import { UserFormModule } from '../form/user-form.module';
 import { UserModule } from '../user.module';

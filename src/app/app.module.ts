@@ -18,10 +18,11 @@ import { SharedModule } from './module/common';
 import { ConfigModule } from './module/config/config.module';
 import { AdminPageGuard } from './page/admin/guard';
 import { ConfigService } from './api/services/config.service';
+import { PageNotFoundComponent } from './frames/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

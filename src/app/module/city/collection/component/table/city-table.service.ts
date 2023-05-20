@@ -33,6 +33,7 @@ export class CityTableService {
         ).pipe(
             switchMap((cities) => {
                 this.params = {
+                    //selectedEntity,
                     cities,
                 };
 

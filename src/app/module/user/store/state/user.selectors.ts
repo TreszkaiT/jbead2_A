@@ -1,9 +1,9 @@
-import { UserEntity } from 'src/app/api/user';
+import { USER_FEATURE_KEY, UserEntity } from 'src/app/api/user';
 
 import { Dictionary } from '@ngrx/entity';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
-import { State, USER_FEATURE_KEY, userAdapter } from './user.reducer';
+import { State, userAdapter } from './user.reducer';
 
 export const getUserState = createFeatureSelector<State>(USER_FEATURE_KEY);
 
